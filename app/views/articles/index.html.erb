@@ -25,9 +25,9 @@
             <td><%= article.title %></td>
             <td><%= article.body %></td>
             <td>
-                <a href="/articles/<%= article.id %>">Show</a>&nbsp;
-                <a href="/articles/<%= article.id %>/edit">Edit</a>&nbsp;
-                <a href="/articles/<%= article.id %>/edit">Delete</a>&nbsp;
+                <%= link_to "Show", article_path(article) %>&nbsp;
+                <%= link_to "Edit", edit_article_path(article) %>&nbsp;
+                <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;
             </td>
         </tr>
         <% end %>
