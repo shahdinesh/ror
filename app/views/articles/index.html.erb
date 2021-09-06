@@ -1,0 +1,36 @@
+<style>
+    table, td, th {
+        border: 1px solid black;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+</style>
+
+<h1>Articles List</h1>
+<p><a href="/articles/new">Add Article</a></p>
+<table>
+    <thead>
+        <tr>
+            <th>TItle</th>
+            <th>Description</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.title %></td>
+            <td><%= article.body %></td>
+            <td>
+                <a href="/articles/<%= article.id %>">Show</a>&nbsp;
+                <a href="/articles/<%= article.id %>/edit">Edit</a>&nbsp;
+                <a href="/articles/<%= article.id %>/edit">Delete</a>&nbsp;
+            </td>
+        </tr>
+        <% end %>
+
+    </tbody>
+</table>
